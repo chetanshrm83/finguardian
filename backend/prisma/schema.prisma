@@ -27,7 +27,11 @@ model User {
   @@map("users")
 }
 
-enum RiskProfile { CONSERVATIVE MODERATE AGGRESSIVE }
+enum RiskProfile {
+  CONSERVATIVE
+  MODERATE
+  AGGRESSIVE
+}
 
 model Loan {
   id                String     @id @default(cuid())
@@ -53,8 +57,22 @@ model Loan {
   @@map("loans")
 }
 
-enum LoanType   { PERSONAL HOME VEHICLE EDUCATION CREDIT_CARD BUSINESS OTHER }
-enum LoanStatus { ACTIVE OVERDUE PAID RESTRUCTURED }
+enum LoanType {
+  PERSONAL
+  HOME
+  VEHICLE
+  EDUCATION
+  CREDIT_CARD
+  BUSINESS
+  OTHER
+}
+
+enum LoanStatus {
+  ACTIVE
+  OVERDUE
+  PAID
+  RESTRUCTURED
+}
 
 model EmiPayment {
   id        String        @id @default(cuid())
@@ -68,7 +86,11 @@ model EmiPayment {
   @@map("emi_payments")
 }
 
-enum PaymentStatus { PAID PARTIAL MISSED }
+enum PaymentStatus {
+  PAID
+  PARTIAL
+  MISSED
+}
 
 model Transaction {
   id          String          @id @default(cuid())
@@ -84,7 +106,10 @@ model Transaction {
   @@map("transactions")
 }
 
-enum TransactionType { INCOME EXPENSE }
+enum TransactionType {
+  INCOME
+  EXPENSE
+}
 
 model Investment {
   id             String         @id @default(cuid())
@@ -104,7 +129,16 @@ model Investment {
   @@map("investments")
 }
 
-enum InvestmentType { SIP FD PPF ELSS NSC RD GOLD OTHER }
+enum InvestmentType {
+  SIP
+  FD
+  PPF
+  ELSS
+  NSC
+  RD
+  GOLD
+  OTHER
+}
 
 model CommunicationLog {
   id          String            @id @default(cuid())
@@ -120,8 +154,18 @@ model CommunicationLog {
   @@map("communication_logs")
 }
 
-enum CommunicationType { CALL EMAIL SMS GENERATED_SCRIPT }
-enum ScriptTone        { POLITE FIRM LEGAL_AWARE }
+enum CommunicationType {
+  CALL
+  EMAIL
+  SMS
+  GENERATED_SCRIPT
+}
+
+enum ScriptTone {
+  POLITE
+  FIRM
+  LEGAL_AWARE
+}
 
 model AiConversation {
   id        String      @id @default(cuid())
@@ -145,7 +189,11 @@ model AiMessage {
   @@map("ai_messages")
 }
 
-enum MessageRole { USER ASSISTANT SYSTEM }
+enum MessageRole {
+  USER
+  ASSISTANT
+  SYSTEM
+}
 
 model ReminderJob {
   id          String    @id @default(cuid())
@@ -159,5 +207,16 @@ model ReminderJob {
   @@map("reminder_jobs")
 }
 
-enum JobType   { EMI_REMINDER OVERDUE_ALERT INVESTMENT_DIGEST TAX_REMINDER }
-enum JobStatus { PENDING SENT FAILED CANCELLED }
+enum JobType {
+  EMI_REMINDER
+  OVERDUE_ALERT
+  INVESTMENT_DIGEST
+  TAX_REMINDER
+}
+
+enum JobStatus {
+  PENDING
+  SENT
+  FAILED
+  CANCELLED
+}
